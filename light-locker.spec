@@ -1,11 +1,12 @@
 Summary:	Scrren locking application for use with LightDM
 Name:		light-locker
-Version:	0.1.0
-Release:	2
+Version:	1.1.0
+Release:	1
 License:	GPL v2/LGPL
 Group:		X11/Applications
-Source0:	http://rhaalovely.net/stuff/%{name}-%{version}.tar.bz2
-# Source0-md5:	52984b8c7066b63e1c5398859e36a255
+Source0:	https://github.com/the-cavalry/light-locker/releases/download/v%{version}/%{name}-%{version}.tar.bz2
+# Source0-md5:	0e643658fdde4dc0aefdc3c9c10898ca
+BuildRequires:	dbus-glib-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	pkg-config
 BuildRequires:	systemd-devel
@@ -24,6 +25,8 @@ the desktop while not carrying any desktop-specific dependencies.
 
 %build
 %configure \
+	--disable-schemas-compile	\
+	--with-console-kit=no		\
 	--with-gtk2
 %{__make}
 
@@ -43,6 +46,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/light-locker
 %attr(755,root,root) %{_bindir}/light-locker-command
-%{_desktopdir}/light-locker.desktop
+%{_sysconfdir}/xdg/autostart/light-locker.desktop
 %{_mandir}/man1/light-locker*1*
 
