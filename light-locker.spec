@@ -1,11 +1,11 @@
 Summary:	Scrren locking application for use with LightDM
 Name:		light-locker
-Version:	1.1.0
+Version:	1.4.0
 Release:	1
 License:	GPL v2/LGPL
 Group:		X11/Applications
 Source0:	https://github.com/the-cavalry/light-locker/releases/download/v%{version}/%{name}-%{version}.tar.bz2
-# Source0-md5:	0e643658fdde4dc0aefdc3c9c10898ca
+# Source0-md5:	0660c61204b75c8b11f9f452d55726e2
 BuildRequires:	dbus-glib-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	pkg-config
